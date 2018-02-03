@@ -311,7 +311,7 @@
             }
         }
         function ReloadDatableAjax(id) {
-            $('#' + id).DataTable().ajax.reload();
+            $('#' + id).DataTable().ajax.reload(null, false);
         }
         function GetDeleteSwal(val) {
             var url = $(val).data("url");

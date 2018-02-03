@@ -26,6 +26,7 @@ namespace itka.Services
         }
         public tblProduct ProductDetails(int id)
         {
+
             return _db.Products.Where(x => x.id == id).FirstOrDefault();
         }
         public tblSupplier SupplierDetails(int id)

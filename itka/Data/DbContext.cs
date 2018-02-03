@@ -2,8 +2,7 @@
 using itka.Models;
 using itka.Migrations;
 using Microsoft.AspNet.Identity.EntityFramework;
-
-
+using System;
 
 namespace itka.Data
 {
@@ -26,7 +25,11 @@ namespace itka.Data
         public DbSet<tblEntry> Entries { get; set; }
         public DbSet<tblExit> Exits { get; set; }
         public DbSet<tblWarehouse> Warehouses { get; set; }
-
+        public DbSet Set(string name)
+        {
+            // you may need to fill in the namespace of your context
+            return base.Set(Type.GetType(name));
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
