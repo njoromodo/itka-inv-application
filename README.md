@@ -1,5 +1,5 @@
 # itka-inv-application
-Warehouse Management System. ASP.NET MVC 5 + Material Design.
+Warehouse Management System. ASP.NET MVC 5
 
 This is a simple application to manage warehouses. You can manage clients, suppliers, warehouses, entries, exists, stock, etc.
 Back End: ASP.NET MVC 5, SQL Server, C#, Entity Framework, Linq
