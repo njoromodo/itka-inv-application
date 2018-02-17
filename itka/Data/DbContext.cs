@@ -3,6 +3,7 @@ using itka.Models;
 using itka.Migrations;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
+using System.Linq;
 
 namespace itka.Data
 {
@@ -25,7 +26,7 @@ namespace itka.Data
         public DbSet<tblEntry> Entries { get; set; }
         public DbSet<tblExit> Exits { get; set; }
         public DbSet<tblWarehouse> Warehouses { get; set; }
-        public DbSet Set(string name)
+        public DbSet SetTbl(string name)
         {
             // you may need to fill in the namespace of your context
             return base.Set(Type.GetType(name));
@@ -40,6 +41,11 @@ namespace itka.Data
             //              !p.Name.Contains("Id") &&
             //              !p.Name.Contains("Provider"))
             //  .Configure(p => p.HasMaxLength(2000));
+        }
+
+        internal IQueryable SetTbl(Type tType)
+        {
+            return base.Set(tType);
         }
     }
 }

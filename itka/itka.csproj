@@ -94,6 +94,10 @@
     <Reference Include="System.Data.Entity.Design" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
@@ -1115,6 +1119,9 @@
     <Content Include="Views\Shared\_ViewWarehouse.cshtml" />
     <Content Include="Views\App\Warehouses.cshtml" />
     <Content Include="Views\App\Stock.cshtml" />
+    <Content Include="Views\App\Entries.cshtml" />
+    <Content Include="Views\App\Exits.cshtml" />
+    <Content Include="Views\App\AppSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

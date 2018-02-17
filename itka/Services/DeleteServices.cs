@@ -1,6 +1,7 @@
 ﻿using itka.Data;
 using System;
 using System.Linq;
+using System.Linq.Dynamic;
 
 namespace itka.Services
 {
@@ -39,13 +40,14 @@ namespace itka.Services
             {
                 try
                 {
-                    var usr = _db.Units.Where(x => x.id == id).First();
-                    usr.status = false;
-                    _db.SaveChanges();
+
+                    //var usr = _db.SetTbl(table).AsQueryable().Where("id ==" + id).Select();
+                    string strTableName = "tblUnits";
+                    _db.Database.ExecuteSqlCommand("UPDATE \""+ strTableName + "\" SET \"status\" = 'false' WHERE id =" + id);
                     dbContextTransaction.Commit();
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     dbContextTransaction.Rollback();
                     return false;
